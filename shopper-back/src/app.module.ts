@@ -1,10 +1,15 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { EstimateModule } from './ride/estimate/estimate.module';
+import { HistoryModule } from './ride/{customer_id}/history.module';
+import { ConfigModule } from '@nestjs/config';
+import { ConfirmModule } from './ride/confirm/confirm.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    HistoryModule,
+    ConfirmModule,
+    EstimateModule,
+    ConfigModule.forRoot(),
+  ],
 })
 export class AppModule {}
