@@ -1,0 +1,35 @@
+services:
+  backend:
+    build: /shopper-back
+    environment:
+      - DATABASE_URL=postgresql://postgres:unsafepw123@database:5432/uber?schema=public
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+    depends_on:
+      database:
+        condition: service_healthy
+  frontend:
+    environment:
+      - BACKEND_URL=http://backend:8080
+    env_file:
+      - .env
+    build: /shopper-front
+    ports:
+      - "80:80"
+    depends_on:
+      database:
+        condition: service_healthy
+  database:
+    build: .
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: unsafepw123
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 1s
+      timeout: 5s
+      retries: 10
