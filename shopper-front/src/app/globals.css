@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: url("/background-desktop.png");
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.button {
+  padding: 12px;
+  border-radius: 16px;
+  background: #1bb371;
+  color: #ededed;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 115%;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  filter: brightness(0.85);
+}
+
+@media screen and (max-width: 1023px) {
+  .container {
+    width: 100%;
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 100%;
+    max-width: calc(100% - 224px);
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}

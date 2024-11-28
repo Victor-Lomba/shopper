@@ -1,0 +1,26 @@
+.homeSection {
+  max-width: 550px;
+}
+
+.homeSection__title {
+  color: #e0e0e0;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 115%;
+}
+
+.homeSection__subTitle {
+  color: #cfcfcf;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 115%;
+}
+
+@media screen and (max-width: 1023px) {
+  .homeSection__title,
+  .homeSection__subTitle {
+    display: none;
+  }
+}

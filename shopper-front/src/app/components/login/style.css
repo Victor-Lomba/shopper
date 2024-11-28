@@ -1,0 +1,66 @@
+.loginPage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.loginForm {
+  border-radius: 24px;
+  background: #ededed;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: fit-content;
+}
+
+.loginForm__title {
+  color: #1c1933;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 115%;
+  margin-bottom: 32px;
+}
+
+.loginForm__input {
+  color: #000;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 115%;
+  margin-bottom: 32px;
+  border-radius: 16px;
+  border: #ccc;
+  padding: 12px;
+}
+
+.loginForm__input::placeholder {
+  color: #ccc;
+}
+
+.loginForm__button {
+  padding: 12px;
+  border-radius: 16px;
+  background: #1bb371;
+  color: #ededed;
+  text-align: center;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 115%;
+  transition: all 0.3s ease-in-out;
+}
+
+.loginForm__button:hover {
+  filter: brightness(0.85);
+}
+
+@media screen and (max-width: 1023px) {
+  .loginPage {
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+  }
+}
